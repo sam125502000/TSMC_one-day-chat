@@ -1,0 +1,35 @@
+<div class="chatroom">
+    <div class="chatroom-title py-3 mx-xl-2">
+        <span>{{selectedRoom}}</span>
+    </div>
+    <div *ngIf="!this.socketConnectionStatus" class="alert alert-danger" role="alert">
+        Chat Service Disconnected!!!
+    </div>
+    <div #chatRoomConversation class="chatroom-conversation">
+        <li *ngFor="let messageObj of messageArr" class="message">
+            <div class="row align-items-center my-2"
+                [class]="selectedUser === messageObj.user ? 'flex-row-reverse' : 'flex-row'">
+                <div class="col-auto px-1 my-1 align-items-center text-center" style="font-size: xx-small;">
+                    <img [src]="getUserImg(messageObj.user)" class="message-profileimg" alt="">
+                    <br>
+                    {{messageObj.user}}
+                </div>
+                <div class="col-auto px-1 my-1 border border-2 rounded align-items-center message-text">
+                    <div>
+                        {{messageObj.text}}
+                    </div>
+                </div>
+                <div class="col-auto px-1 my-1 align-items-center" style="font-size: xx-small;">
+                    {{messageObj.datetime | date:'shortTime'}}
+                </div>
+            </div>
+        </li>
+    </div>
+    <div class="my-1"></div>
+    <div>
+        <textarea [(ngModel)]="inputMessage" class="mx-xl-2" style="width: 95%; height: 13vh;"
+            placeholder="Type your message here..."></textarea>
+    </div>
+    <button [disabled]="!inputMessage || inputMessage.length === 0" class="btn btn-primary btn-sm my-1 mx-xl-2"
+        (click)="sendMessage()"> Send Message <i class="fa fa-paper-plane"></i></button>
+</div>

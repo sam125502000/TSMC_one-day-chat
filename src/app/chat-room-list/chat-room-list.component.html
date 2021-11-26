@@ -1,0 +1,9 @@
+<div class="chatroomlist">
+    <div class="py-1">2. Choose your Channel</div>
+    <ul class="chatroomlistitems py-1">
+        <li *ngFor="let chatRoom of chatRoomOptions" [class.selected]="chatRoom === selectedChatRoom"
+            (click)="onSelect(chatRoom)">
+            {{chatRoom}}
+        </li>
+    </ul>
+</div>

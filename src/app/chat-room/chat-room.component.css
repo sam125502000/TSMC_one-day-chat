@@ -1,0 +1,36 @@
+button{
+    background-color: rgb(23,162,184);
+}
+.chatroom{
+    background-color: rgb(244,245,251);
+    border-left: 1px;
+    border-left-style:solid;
+    border-left-color:rgb(230,236,243);;
+    height: 100%;
+    width: 100%;
+}
+.chatroom-title{
+    border-bottom: 1px;
+    border-bottom-style:solid;
+    border-bottom-color:rgb(230,236,243);
+}
+.chatroom-conversation{
+    height: 70vh; 
+    overflow-x:hidden;
+}
+.message{
+    list-style: none;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.message-profileimg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.message-text{
+    white-space: pre-line;
+    font-size: large;
+    background-color: white;
+    border-color: white !important;
+}

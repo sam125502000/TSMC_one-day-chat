@@ -1,0 +1,6 @@
+<div class="userdropdown">
+    <div class="py-1">1. Choose your user</div>
+    <ng-select [items]="userOptions" [clearable]="false" [searchable]="false" bindLabel="user" bindValue="user"
+        [(ngModel)]="selectedUser" (change)="onUserChange()">
+    </ng-select>
+</div>
